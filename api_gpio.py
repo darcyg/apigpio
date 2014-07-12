@@ -8,7 +8,7 @@ def init_pin(pin):
         f.write(str(pin))
         f.close()
     except:
-        pass
+        print "Error"
     
     f= open ('/sys/class/gpio/export','w')
     f.write(str(pin))
@@ -39,9 +39,5 @@ def deinit_pin(pin):
         f.write(str(pin))
         f.close()
     except:
-        pass
+        print "Error"
 
-
-    
-init_pin(17)
-off_pin(17)
