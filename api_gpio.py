@@ -41,3 +41,15 @@ def deinit_pin(pin):
     except:
         print "Error"
 
+
+def get_pin(pin):
+    '''
+    Function to return current value of pin. Pin must be previously inititalized.
+    Returns True if 1, False if 0.
+    '''
+    path = '/sys/class/gpio/gpio' + str(pin) + '/value'
+    f= open (path,'w')
+    value = f.read()
+    f.close()
+    if value == '1': return True
+    elif value == '0': return False
